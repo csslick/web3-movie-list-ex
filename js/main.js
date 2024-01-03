@@ -73,7 +73,7 @@ let html = ''; // html 변수
 data.forEach(function(movie){
     console.log(movie.title);
     html += `
-        <div class='item'>
+        <div class='item' onclick="openModal('${movie.youtube}')">
             <img src=${movie.imgUrl} alt={movie.title}/>
             <div class='info'>
                 <h3>${movie.title}</h3>
@@ -89,3 +89,18 @@ data.forEach(function(movie){
 
 // html 문서에 표시
 movieList.innerHTML = html;
+
+// 모달창 열기
+function openModal(id) {
+    const modal = document.querySelector('.modal');
+    modal.classList.add('show');
+    console.log(id);
+}
+
+// 모달창 닫기
+function closeModal() {
+    const modal = document.querySelector('.modal');
+    modal.classList.remove('show');
+}
+
+
