@@ -18,10 +18,24 @@
     flex-wrap: wrap;
     gap: 20px;
     .item {
+        position: relative;
         width: calc((100% - 60px) / 4);
         img {
             width: 100%;
         }
+        .info {
+            position: absolute;
+            background: #000;
+            left: 0;
+            top: 0;
+            color: #fff;
+            padding: 10px;
+            width: 100%;
+            height: 100%;
+            display: none;
+        }
+        // item(부모 요소)가 hover되면 .info 보임
+        &:hover .info { display: block; }
     }
 }
 
